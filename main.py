@@ -9,7 +9,7 @@ d = np.array([[2, 1, 3], [-1, 2, 4], [-1, 61, 4], [-22, 2, 12]])
 e = np.array([[5, 3], [2, -2], [-9, 123]])
 def pozycja(a, b):
     kol = a.min(axis=1)
-    kold = a.min(axis=0)
+    kold = a.min(axis=0)  # xd
     rzad = b.min(axis=1)
     rzadd = b.min(axis=0)
     print(rzad)
