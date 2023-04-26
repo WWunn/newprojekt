@@ -1,31 +1,31 @@
 import numpy as np
-import math
-# zadanie 1
-a = np.array([[2, 1, 3], [-1, 2, 4]])
-b = np.array([[1, 3], [2, -2], [-1, 4]])
-c = np.dot(a, b)
-# zadanie 2
-d = np.array([[2, 1, 3], [-1, 2, 4], [-1, 61, 4], [-22, 2, 12]])
-e = np.array([[5, 3], [2, -2], [-9, 123]])
-def pozycja(a, b):
-    kol = a.min(axis=1)
-    kold = a.min(axis=0)  # xd
-    rzad = b.min(axis=1)
-    rzadd = b.min(axis=0)
-    print(rzad)
-    print(rzadd)
-    print(kol)
-    print(kold)
-def sinusy(a):
-    lista = []
-    for b in a.flat:
+import pandas as pd
+import openpyxl
+# Zadanie 1
+xlsx = pd.ExcelFile('imiona.xlsx')
+# Wczytaj do DataFrame arkusz z narodzinami dzieci w Polsce dostępny w pliku /datasets/imiona.xlsx
+df = pd.read_excel(xlsx, header=0)
+# Zadanie 2
 
-        c = np.insert(math.sin(b))
-    print(c)
-
-sinusowy = np.array([[4, 5, 6], [7, 3, 2]])
-
-sinusy(sinusowy)
-
+# •tylko te rekordy gdzie liczba nadanych imion była większa niż 1000 w danym roku
+# print(df[df['Liczba']>1000])
+# •tylko rekordy gdzie nadane imię jest takie jak Twoje
+# print(df[df['Imie'] == 'WOJTEK'])
+# •sumę wszystkich urodzonych dzieci w całym danym okresie,
+# print(df.groupby(['Rok']).agg({'Liczba':['sum']}))
+# •sumędzieci urodzonych w latach 2000-2005
+# print(df.groupby(['Rok']).agg({'Liczba':['sum']}),df[df['Rok']<2005])
+# •sumę urodzonych chłopców i dziewczynek,
+print(df.groupby(['Plec']).agg({'Liczba':['max']}))
+# •najbardziej popularne imię dziewczynki i chłopca w danym roku ( czyli po 2 rekordy na rok),
+print(df.groupby(['Rok']).agg({'Imie'})
+# •najbardziej popularne imię dziewczynki i chłopca w całym danym okresie,
+# Zadanie 3
+# Wczytaj plik /datasets/zamowieniana.csv a następnie wyświetl:
+# •listę unikalnych nazwisk sprzedawców (przetwarzając zwróconą pojedynczą kolumnę z DataFrame)
+# •5 najwyższych wartości zamówień•ilość zamówień złożonych przez każdego sprzedawcę•sumę zamówień dla każdego kraju
+# •sumę zamówień dla roku 2005, dla sprzedawców z Polski
+# •średnią kwotę zamówienia w 2004 roku,
+# •zapisz dane za 2004 rok do pliku zamówienia_2004.csv a dane za 2005 do pliku zamówienia_2005.csv
 
 
