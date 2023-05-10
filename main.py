@@ -91,43 +91,65 @@ import time
 # plt.ylabel('sin(x)')
 # plt.title('Sinus')
 # plt.show()
-x1 = np.arange(0,30)
-y1 = np.sin(x1)
-y2 = x1*2
-y3 = np.sqrt(x1)
-y4 = x1**2
-y5 = np.cos(x1)
-y6 = np.tan(x1)
-fig, axs = plt.subplots(3, 2)
-axs[0, 0].plot(x1, y1, 'g-')
-axs[0, 0].set_xlabel('x')
-axs[0, 0].set_ylabel('y')
-axs[0, 0].set_title('ajdin')
-
-axs[1, 0].plot(x1, y6, 'g-')
-axs[1, 0].set_xlabel('x')
-axs[1, 0].set_ylabel('y')
-axs[1, 0].set_title('cwaj')
-
-axs[2, 0].plot(x1, y2, 'g-')
-axs[2, 0].set_xlabel('x')
-axs[2, 0].set_ylabel('y')
-axs[2, 0].set_title('ajdin')
-
-axs[1, 1].plot(x1, y3, 'g-')
-axs[1, 1].set_xlabel('x')
-axs[1, 1].set_ylabel('y')
-axs[1, 1].set_title('ajdin')
+# x1 = np.arange(0,30)
+# y1 = np.sin(x1)
+# y2 = x1*2
+# y3 = np.sqrt(x1)
+# y4 = x1**2
+# y5 = np.cos(x1)
+# y6 = np.tan(x1)
+# fig, axs = plt.subplots(3, 2)
+# axs[0, 0].plot(x1, y1, 'g-')
+# axs[0, 0].set_xlabel('x')
+# axs[0, 0].set_ylabel('y')
+# axs[0, 0].set_title('ajdin')
 #
-axs[0, 1].plot(x1, y4, 'g-')
-axs[0, 1].set_xlabel('x')
-axs[0, 1].set_ylabel('y')
-axs[0, 1].set_title('ajdin')
+# axs[1, 0].plot(x1, y6, 'g-')
+# axs[1, 0].set_xlabel('x')
+# axs[1, 0].set_ylabel('y')
+# axs[1, 0].set_title('cwaj')
+#
+# axs[2, 0].plot(x1, y2, 'g-')
+# axs[2, 0].set_xlabel('x')
+# axs[2, 0].set_ylabel('y')
+# axs[2, 0].set_title('draj')
+#
+# axs[1, 1].plot(x1, y3, 'g-')
+# axs[1, 1].set_xlabel('x')
+# axs[1, 1].set_ylabel('y')
+# axs[1, 1].set_title('cztery')
+# #
+# axs[0, 1].plot(x1, y4, 'g-')
+# axs[0, 1].set_xlabel('x')
+# axs[0, 1].set_ylabel('y')
+# axs[0, 1].set_title('siedem')
+#
+# axs[2, 1].plot(x1, y5, 'g-')
+# axs[0, 1].set_xlabel('x')
+# axs[0, 1].set_ylabel('y')
+# axs[0, 1].set_title('szesc')
+#
+# fig.delaxes(axs[2, 0])
+# plt.show()
+# barowe
+# data = {'Kraj':['Belgia', 'Indie', 'Brazylia', 'Polska'],
+#         'Stolica':['Bruksela', 'New Delhi', 'Brasilia', 'Warszawa'],
+#         'Kontynent':['Europa', 'Azja', 'Ameryka Południowa', 'Europa'],
+#         'Populacja':[124234, 235235, 121411, 151361]}
+# df = pd.DataFrame(data)
+# print(df)
+# grupa = df.groupby('Kontynent')
+# etykiety = list(grupa.groups.keys())
+# wartosc = list(grupa.agg('Populacja').sum())
+# plt.bar(etykiety, wartosc, color=['gold', 'orange', 'yellow'])
+# plt.xlabel('Kontynenty')
+# plt.ylabel('Populacja w mld')
+# plt.show()
 
-axs[2, 1].plot(x1, y5, 'g-')
-axs[0, 1].set_xlabel('x')
-axs[0, 1].set_ylabel('y')
-axs[0, 1].set_title('drai')
-
-fig.delaxes(axs[2, 0])
+ts = pd.Series(np.random.randn(1000))
+ts = ts.cumsum()
+ts.plot()
 plt.show()
+
+grupa = df.groupby('Kontynent').agg({'Populacja w mld'})
+
